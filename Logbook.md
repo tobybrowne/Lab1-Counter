@@ -53,19 +53,19 @@ This can be done as shown:
 ## Task 2: Linking the Verilator Simulation with Vbuddy
 Before starting this task, some setup was required to allow WSL USB access, for communication with Vbuddy.
 
-Once I had done this, I modified the testbench file as shown below, to display the counter on Vbuddy's LCD screen./
-![alt text](images/LBcountertb3.png)/
-A photo of Vbuddy displaying the count can be seen below:/
-![alt text](images/IMG_6132.png)/
+Once I had done this, I modified the testbench file as shown below, to display the counter on Vbuddy's LCD screen.\
+![alt text](images/LBcountertb3.png)\
+A photo of Vbuddy displaying the count can be seen below:\
+![alt text](images/IMG_6132.png)\
 
-Next, I added the following line, which allows me to control the enable signal (stopping and starting the counter) using Vbuddy's rotary button.
-```top->en = vbdFlag();```
-Running this on Vbuddy confirmed it functioned.
+Next, I added the following line, which allows me to control the enable signal (stopping and starting the counter) using Vbuddy's rotary button.\
+```top->en = vbdFlag();```\
+Running this on Vbuddy confirmed it functioned.\
 
-Next, I replaced the "vbdHex" functions, with the following "vbdPlot" function, which outputs the counters value as the value on a graph:
+Next, I replaced the "vbdHex" functions, with the following "vbdPlot" function, which outputs the counters value as the value on a graph:\
   ```vbdPlot(int(top->count), 0, 255);```
-An image of this running on Vbuddy can be seen below:
-![alt text](images/IMG_6139.png)/
+An image of this running on Vbuddy can be seen below:\
+![alt text](images/IMG_6139.png)\
 The flat in the curve shows the rotary button being used to "hold" the counter.
 
 

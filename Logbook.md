@@ -33,7 +33,7 @@ The reset signal is high before clock cycle 2 and high again in the 15th clock c
 
 Before starting the next task, I am going to create a Linux shell script to automate the terminal commands required to convert my System Verilog files into executables.
 This new file can be seen below:
-  IMAGE
+![alt text](images/LBshell.png)
 And can be run using:
   ```source ./doit.sh```
 

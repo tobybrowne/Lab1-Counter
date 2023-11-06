@@ -53,10 +53,10 @@ This can be done as shown:
 ## Task 2: Linking the Verilator Simulation with Vbuddy
 Before starting this task, some setup was required to allow WSL USB access, for communication with Vbuddy.
 
-Once I had done this, I modified the testbench file as shown below, to display the counter on Vbuddy's LCD screen.
-  IMAGE
-A photo of Vbuddy displaying the count can be seen below:
-  IMAGE
+Once I had done this, I modified the testbench file as shown below, to display the counter on Vbuddy's LCD screen./
+![alt text](images/LBcountertb3.png)/
+A photo of Vbuddy displaying the count can be seen below:/
+![alt text](images/IMB_6131.JPEG)/
 
 Next, I added the following line, which allows me to control the enable signal (stopping and starting the counter) using Vbuddy's rotary button.
   IMAGE

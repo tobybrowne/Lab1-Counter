@@ -48,12 +48,15 @@ When we re-view the signals on GTKwave, we see exactly what we would expect:
 
 The next challenge is to change the current counters synchronous reset to an asynchronous reset.
 This can be done, by adding a second condition to the ```always_ff``` block, as shown:
-![alt text](images/LBcountersv1.png)\
+![alt text](images/LBcountersv1.png)
+\
 The synchronous and asynchronous waveforms are shown below:
 **Synchronous**
-![alt text](images/LBgtkwave3.png)\
+![alt text](images/LBgtkwave3.png)
+\
 **Asynchronous**
-![alt text](images/LBgtkwave1.png)\
+![alt text](images/LBgtkwave1.png)
+\
 In the asynchronous waveform it takes only half a cycle for the count signal to reset to 0. In actual hardware, this would be instant - we see the half-cycle delay because we are only polling the state of the system twice a cycle.
 
 
@@ -61,9 +64,11 @@ In the asynchronous waveform it takes only half a cycle for the count signal to 
 Before starting this task, some setup was required to allow WSL USB access, for communication with Vbuddy.
 
 Once I had done this, I modified the testbench file as shown below, to display the counter on Vbuddy's LCD screen.\
-![alt text](images/LBcountertb3.png)\
+![alt text](images/LBcountertb3.png)
+\
 A photo of Vbuddy displaying the count can be seen below:\
-![alt text](images/IMG_6132.png)\
+![alt text](images/IMG_6132.png)
+\
 
 Next, I added the following line, which allows me to control the enable signal (stopping and starting the counter) using Vbuddy's rotary button.\
 ```top->en = vbdFlag();```\
@@ -72,7 +77,8 @@ Running this on Vbuddy confirmed it functioned.\
 Next, I replaced the "vbdHex" functions, with the following "vbdPlot" function, which outputs the counters value as the value on a graph:\
   ```vbdPlot(int(top->count), 0, 255);```
 An image of this running on Vbuddy can be seen below:\
-![alt text](images/IMG_6139.png)\
+![alt text](images/IMG_6139.png)
+\
 The flat in the curve shows the rotary button being used to "hold" the counter.
 
 

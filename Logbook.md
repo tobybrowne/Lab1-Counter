@@ -28,7 +28,6 @@ I also had to set the ```DISPLAY``` environment variable using the following com
 When I run GTKwave, I open the file "Vcounter.vcd" and can see the following waveforms:\
 ![alt text](images/LBgtkwave3.png)
 \
-
 As you can see, the clock signal oscillates between high and low as expected and the enable signal is set to high after 4 clock cycles.
 The reset signal is high before clock cycle 2 and high again in the 15th clock cycle, the count signal increments as expected, responding to the changes in the enable and reset signals.
 
@@ -50,7 +49,7 @@ The next challenge is to change the current counters synchronous reset to an asy
 This can be done, by adding a second condition to the ```always_ff``` block, as shown:
 ![alt text](images/LBcountersv1.png)
 \
-The synchronous and asynchronous waveforms are shown below:
+The synchronous and asynchronous waveforms are shown below:\
 **Synchronous**
 ![alt text](images/LBgtkwave3.png)
 \

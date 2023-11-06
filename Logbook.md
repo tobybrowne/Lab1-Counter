@@ -23,7 +23,9 @@ This file can then be run with the following command:\
 
 I can visualize the waveforms present in my project using the program "GTKwave".
 Running this required me to download an "Xserver" for Windows - this is a complication of using a virtual machine, which wouldn't be present had I been running Linux natively.
-When I run GTKwave, I open the file a "Vcounter.vcd" and can view the following waveforms:
+I also had to set the ```DISPLAY``` environment variable using the following command:
+```export DISPLAY=:0```\
+When I run GTKwave, I open the file "Vcounter.vcd" and can see the following waveforms:
 
 IMAGE
 

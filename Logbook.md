@@ -26,7 +26,7 @@ Running this required me to download an "Xserver" for Windows - this is a compli
 I also had to set the ```DISPLAY``` environment variable using the following command:
 ```export DISPLAY=:0```\
 When I run GTKwave, I open the file "Vcounter.vcd" and can see the following waveforms:\
-![alt text](images/LBgtkwave1.png)\
+![alt text](images/LBgtkwave3.png)\
 
 As you can see, the clock signal oscillates between high and low as expected and the enable signal is set to high after 4 clock cycles.
 The reset signal is high before clock cycle 2 and high again in the 15th clock cycle, the count signal increments as expected, responding to the changes in the enable and reset signals.
@@ -48,8 +48,10 @@ When we re-view the signals on GTKwave, we see exactly what we would expect:
 The next challenge is to change the current counters synchronous reset to an asynchronous reset.
 This can be done, by adding a second condition to the ```always_ff``` block, as shown:
 ![alt text](images/LBcountersv1.png)\
-The synchronous (first) and asynchronous (second) waveforms are shown below:
-![alt text](images/LBgtkwave1.png)\
+The synchronous and asynchronous waveforms are shown below:
+**Synchronous**
+![alt text](images/LBgtkwave3.png)\
+**Asynchronous**
 ![alt text](images/LBgtkwave1.png)\
 In the asynchronous waveform it takes only half a cycle for the count signal to reset to 0. In actual hardware, this would be instant - we see the half-cycle delay because we are only polling the state of the system twice a cycle.
 

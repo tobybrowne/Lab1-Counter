@@ -2,17 +2,17 @@
 
 ## Task 1: Simulating a Basic 8-Bit Binary Counter
 
-After cloning the Lab1-Counter repository on my device, the first step was to write the following system verilog module (counter.sv):\n
+After cloning the Lab1-Counter repository on my device, the first step was to write the following system verilog module (counter.sv):
 ![alt text](images/LBcountersv.png)
 
 
 When this is synthesized using Verilator it should yield the following hardware:
 
-IMAGE
+![alt text](images/LBcounterhw.png)
 
 Next, I must create a testbench file in C++, this will be called "counter_tb.cpp" and is also provided to us:
 
-IMAGE
+![alt text](images/LBcountertb.png)
 
 Then I use the following command which uses Verilator to convert System Verilog into C++, including the tesbench file:
   verilator -Wall --cc --trace counter.sv --exe counter_tb.cpp

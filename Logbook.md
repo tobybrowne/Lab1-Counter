@@ -25,17 +25,17 @@ I can visualize the waveforms present in my project using the program "GTKwave".
 Running this required me to download an "Xserver" for Windows - this is a complication of using a virtual machine, which wouldn't be present had I been running Linux natively.
 I also had to set the ```DISPLAY``` environment variable using the following command:
 ```export DISPLAY=:0```\
-When I run GTKwave, I open the file "Vcounter.vcd" and can see the following waveforms:
+When I run GTKwave, I open the file "Vcounter.vcd" and can see the following waveforms:\
+![alt text](images/LBgtkwave1.png)\
 
-IMAGE
-
-As you can see (explain waveforms to validate they work)
+As you can see, the clock signal oscillates between high and low as expected and the enable signal is set to high after 4 clock cycles.
+The reset signal is high before clock cycle 2 and high again in the 15th clock cycle, the count signal increments as expected, responding to the changes in the enable and reset signals.
 
 Before starting the next task, I am going to create a Linux shell script to automate the terminal commands required to convert my System Verilog files into executables.
 This new file can be seen below:
   IMAGE
 And can be run using:
-  source ./doit.sh
+  ```source ./doit.sh```
 
 ### Challenge
 The first challenge is to modify the testbench file, so that the counter waits at the value 0x9 for 3 clock cycles and then resumes counting.

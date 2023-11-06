@@ -46,8 +46,12 @@ When we re-view the signals on GTKwave, we see exactly what we would expect:
 ![alt text](images/LBgtkwave2.png)
 
 The next challenge is to change the current counters synchronous reset to an asynchronous reset.
-This can be done as shown:
-  IMAGE
+This can be done, by adding a second condition to the ```always_ff``` block, as shown:
+![alt text](images/LBcountersv1.png)\
+The synchronous (first) and asynchronous (second) waveforms are shown below:
+![alt text](images/LBgtkwave1.png)\
+![alt text](images/LBgtkwave1.png)\
+In the asynchronous waveform it takes only half a cycle for the count signal to reset to 0. In actual hardware, this would be instant - we see the half-cycle delay because we are only polling the state of the system twice a cycle.
 
 
 ## Task 2: Linking the Verilator Simulation with Vbuddy

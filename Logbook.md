@@ -2,27 +2,24 @@
 
 ## Task 1: Simulating a Basic 8-Bit Binary Counter
 
-After cloning the Lab1-Counter repository on my device, the first step was to write the following system verilog module (counter.sv):
+After cloning the Lab1-Counter repository on my device, the first step was to write the following system verilog module (counter.sv):\
 ![alt text](images/LBcountersv.png)
-
-
-When this is synthesized using Verilator it should yield the following hardware:
-
+\
+When this is synthesized using Verilator it should yield the following hardware:\
 ![alt text](images/LBcounterhw.png)
-
-Next, I must create a testbench file in C++, this will be called "counter_tb.cpp" and is also provided to us:
-
+\
+Next, I must create a testbench file in C++, this will be called "counter_tb.cpp" and is also provided to us:\
 ![alt text](images/LBcountertb.png)
+\
+Then I use the following command which uses Verilator to convert System Verilog into C++, including the testbench file:\
+  ```verilator -Wall --cc --trace counter.sv --exe counter_tb.cpp```
+This will create a new folder called "obj_dir", to hold a number of new files, including a "make" file entitled ```Vcounter.mk```.
 
-Then I use the following command which uses Verilator to convert System Verilog into C++, including the tesbench file:
-  verilator -Wall --cc --trace counter.sv --exe counter_tb.cpp
-This will create a new folder called "obj_dir", to hold a number of new files, including a "make" file entitled "Vcounter.mk".
-
-Next, I run the following command, which uses the previously created "make" file to build the C++ project and produce the executable file "Vcounter".
-  make -j -C obj_dir/ -f Vcounter.mk Vcounter
-
-This file can then be run with the following command:
-  obj_dir/Vcounter
+Next, I run the following command, which uses the previously created "make" file to build the C++ project and produce the executable file ```Vcounter```.\
+  ```make -j -C obj_dir/ -f Vcounter.mk Vcounter```
+\
+This file can then be run with the following command:\
+  ```obj_dir/Vcounter```
 
 I can visualize the waveforms present in my project using the program "GTKwave".
 Running this required me to download an "Xserver" for Windows - this is a complication of using a virtual machine, which wouldn't be present had I been running Linux natively.

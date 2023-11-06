@@ -56,7 +56,7 @@ Before starting this task, some setup was required to allow WSL USB access, for 
 Once I had done this, I modified the testbench file as shown below, to display the counter on Vbuddy's LCD screen./
 ![alt text](images/LBcountertb3.png)/
 A photo of Vbuddy displaying the count can be seen below:/
-![alt text](images/IMB_6131.png)/
+![alt text](images/IMG_6131.png)/
 
 Next, I added the following line, which allows me to control the enable signal (stopping and starting the counter) using Vbuddy's rotary button.
 ```top->en = vbdFlag();```

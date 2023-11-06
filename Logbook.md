@@ -39,8 +39,11 @@ And can be run using:
 
 ### Challenge
 The first challenge is to modify the testbench file, so that the counter waits at the value 0x9 for 3 clock cycles and then resumes counting.
-This can be achieved with the following modifications:
-  IMAGE
+This can be achieved, by introducing a new variable ```flag``` and disabling the previous conditions on the reset signal, as shown below:
+![alt text](images/LBcountertb2.png)
+
+When we re-view the signals on GTKwave, we see exactly what we would expect:
+![alt text](images/LBgtkwave2.png)
 
 The next challenge is to change the current counters synchronous reset to an asynchronous reset.
 This can be done as shown:

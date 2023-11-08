@@ -33,13 +33,13 @@ The reset signal is high before clock cycle 2 and high again in the 15th clock c
 
 Before starting the next task, I am going to create a Linux shell script to automate the terminal commands required to convert my System Verilog files into executables.
 This new file can be seen below:\
-<img src = "images/LBshell.png" width="500">
+<img src = "images/LBshell.png" width="500">\
 And can be run using:
   ```source ./doit.sh```
 
 ### Challenge
 The first challenge is to modify the testbench file, so that the counter waits at the value 0x9 for 3 clock cycles and then resumes counting.
-This can be achieved, by introducing a new variable ```flag``` and disabling the previous conditions on the reset signal, as shown below:
+This can be achieved, by introducing a new variable ```flag``` and disabling the previous conditions on the reset signal, as shown below:\
 <img src = "images/LBcountertb2.png" width="500">
 
 When we re-view the signals on GTKwave, we see exactly what we would expect:

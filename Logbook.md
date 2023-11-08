@@ -3,7 +3,7 @@
 ## Task 1: Simulating a Basic 8-Bit Binary Counter
 
 After cloning the Lab1-Counter repository on my device, the first step was to write the following system verilog module (counter.sv):\
-<img src = "images/LBcountersv.png" width="300">
+<img src = "images/LBcountersv.png" width="400">
 \
 When this is synthesized using Verilator it should yield the following hardware:\
 ![alt text](images/LBcounterhw.png)

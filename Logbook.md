@@ -6,10 +6,10 @@ After cloning the Lab1-Counter repository on my device, the first step was to wr
 <img src = "images/LBcountersv.png" width="400">
 \
 When this is synthesized using Verilator it should yield the following hardware:\
-![alt text](images/LBcounterhw.png)
+<img src = "images/LBcounterhw.png">
 \
 Next, I must create a testbench file in C++, this will be called "counter_tb.cpp" and is also provided to us:\
-![alt text](images/LBcountertb.png)
+<img src = "images/LBcountertb.png" width="400">
 \
 Then I use the following command which uses Verilator to convert System Verilog into C++, including the testbench file:\
   ```verilator -Wall --cc --trace counter.sv --exe counter_tb.cpp```

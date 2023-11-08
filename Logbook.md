@@ -9,7 +9,7 @@ When this is synthesized using Verilator it should yield the following hardware:
 <img src = "images/LBcounterhw.png">
 \
 Next, I must create a testbench file in C++, this will be called "counter_tb.cpp" and is also provided to us:\
-<img src = "images/LBcountertb.png" width="400">
+<img src = "images/LBcountertb.png" width="700">
 \
 Then I use the following command which uses Verilator to convert System Verilog into C++, including the testbench file:\
   ```verilator -Wall --cc --trace counter.sv --exe counter_tb.cpp```
